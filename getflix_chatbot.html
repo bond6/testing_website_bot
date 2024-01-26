@@ -1,0 +1,50 @@
+<html>
+<body>
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "ca8015a5-c7a2-43a7-a952-778aa2e76922",
+        apiHost: "https://flowise.ekomiapps.de",
+        chatflowConfig: {
+            // topK: 2
+        },
+        theme: {
+            button: {
+                backgroundColor: "#c92a2a",
+                right: 50,
+                bottom: 50,
+                size: "large",
+                iconColor: "white",
+
+            },
+            chatWindow: {
+                welcomeMessage: "Hi there! I am Getflix's new AI agent. How can I help?",
+                backgroundColor: "#ffffff",
+                height: 700,
+                width: 400,
+                fontSize: 16,
+                poweredByTextColor: "#303235",
+                botMessage: {
+                    backgroundColor: "#f7f8ff",
+                    textColor: "#303235",
+                    showAvatar: true,
+                    avatarSrc: "https://www.getflix.com/assets/favicon96.png",
+                },
+                userMessage: {
+                    backgroundColor: "#c92a2a",
+                    textColor: "#ffffff",
+                    showAvatar: false
+                },
+                textInput: {
+                    placeholder: "Type your question",
+                    backgroundColor: "#ffffff",
+                    textColor: "#303235",
+                    sendButtonColor: "#c92a2a",
+                }
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
