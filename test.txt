@@ -1,0 +1,65 @@
+<SafeAreaView
+                  onTouchStart={() => {
+                    setScrollView(false);
+                  }}
+                  onTouchEnd={() => {
+                    setScrollView(true);
+                  }}
+                  style={styles.map}
+                >
+                  <View style={{ flex: 1, position: "relative" }}>
+                    <ExpoLeaflet
+                      mapCenterPosition={{
+                        lat: result.location_lat,
+                        lng: result.location_long,
+                      }}
+                      mapLayers={mapLayers}
+                      mapMarkers={mapMarkers(
+                        result.location_lat,
+                        result.location_long
+                      )}
+                      mapOptions={mapOptions}
+                      maxZoom={16}
+                      onMessage={(message) => {
+                        switch (message.tag) {
+                          case "onMapMarkerClicked":
+                            Alert.alert(
+                              `Map Marker Touched, ID: ${
+                                message.mapMarkerId || "unknown"
+                              }`
+                            );
+                            break;
+                          case "onMapClicked":
+                            break;
+                          case "onMoveEnd":
+                            break;
+                          case "onZoomEnd":
+                            setZoom(message.zoom);
+                            break;
+                          default:
+                            return;
+                        }
+                      }}
+                      zoom={zoom}
+                    />
+                  </View>
+                </SafeAreaView>
+              
+              
+  onPress={() =>
+                      addEventToCalendar(
+                        date.start_date,
+                        result.internalTitle,
+                        result.location_title,
+                        result.event_description,
+                        date.start_time,
+                        date.end_time
+                      )
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                     
