@@ -1,0 +1,49 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bond6/FlowiseChatEmbed@main/dist/web.nonmodule.js"></script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+    // Ensure the Chatbot library is fully loaded
+    if (typeof Chatbot !== "undefined") {
+        Chatbot.init({
+        chatflowid: "560271c9-3bb2-4f52-be54-816ac9be1f90",
+        apiHost: "https://flowise.ekomiapps.de",
+        chatflowConfig: {
+            // topK: 2
+        },
+        theme: {
+            button: {
+            backgroundColor: "#25c8ff",
+            right: 50,
+            bottom: 50,
+            size: "large",
+            iconColor: "white",
+            },
+            chatWindow: {
+            welcomeMessage:
+                "Hi there! I am Smart DNS Proxy's bot. How can I help with Smart DNS Proxy's related questions?",
+            backgroundColor: "#ffffff",
+            fontSize: 16,
+            poweredByTextColor: "#303235",
+            botMessage: {
+                backgroundColor: "#F1F1F0",
+                textColor: "#000000",
+                showAvatar: false,
+            },
+            userMessage: {
+                backgroundColor: "#019cfd",
+                textColor: "#fff",
+                showAvatar: false,
+            },
+            textInput: {
+                placeholder: "Type your question",
+                backgroundColor: "#ffffff",
+                textColor: "#303235",
+                sendButtonColor: "#c92a2a",
+            },
+            },
+        },
+        });
+    } else {
+        console.error("Chatbot library is not loaded.");
+    }
+    });
+</script>
