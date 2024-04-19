@@ -1,106 +1,57 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style data-emotion="css" data-s=""></style>
-    <title>Flowise - Low-code LLM apps builder</title>
-    <link rel="icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#2296f3" />
-    <meta name="title" content="Flowise - Low-code LLM apps builder" />
-    <meta
-      name="description"
-      content="Flowise helps you to better integrate Web3 with existing Web2 applications"
-    />
-    <meta
-      name="keywords"
-      content="react, material-ui, reactjs, reactjs, workflow automation, web3, web2, blockchain"
-    />
-    <meta name="author" content="CodedThemes" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://flowiseai.com/" />
-    <meta property="og:site_name" content="flowiseai.com" />
-    <meta
-      property="article:publisher"
-      content="https://www.facebook.com/codedthemes"
-    />
-    <meta property="og:title" content="Flowise - Low-code LLM apps builder" />
-    <meta
-      property="og:description"
-      content="Flowise helps you to better build LLM flows using Langchain in simple GUI"
-    />
-    <meta
-      property="og:image"
-      content="https://flowiseai.com/og-image/og-facebook.png"
-    />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://flowiseai.com" />
-    <meta
-      property="twitter:title"
-      content="Flowise - Low-code LLM apps builder"
-    />
-    <meta
-      property="twitter:description"
-      content="Flowise helps you to better build LLM flows using Langchain in simple GUI"
-    />
-    <meta
-      property="twitter:image"
-      content="https://flowiseai.com/og-image/og-twitter.png"
-    />
-    <meta name="twitter:creator" content="@codedthemes" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap"
-      rel="stylesheet"
-    />
-
-  </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div id="portal"></div>
-    <script type="module">
-        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-        Chatbot.init({
+    <script src="./web.nonmodule.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ensure the Chatbot library is fully loaded
+        if (typeof Chatbot !== "undefined") {
+          Chatbot.init({
             chatflowid: "ca8015a5-c7a2-43a7-a952-778aa2e76922",
             apiHost: "https://flowise.ekomiapps.de",
             chatflowConfig: {
-                // topK: 2
+              // topK: 2
             },
             theme: {
-                button: {
-                    backgroundColor: "#c92a2a",
-                    right: 50,
-                    bottom: 50,
-                    size: "large",
-                    iconColor: "white",
-    
+              button: {
+                backgroundColor: "#25c8ff",
+                right: 50,
+                bottom: 50,
+                size: "large",
+                iconColor: "white",
+              },
+              chatWindow: {
+                welcomeMessage:
+                  "Hi there! I am Smart DNS Proxy's bot. How can I help with Smart DNS Proxy's related questions?",
+                backgroundColor: "#ffffff",
+                fontSize: 16,
+                poweredByTextColor: "#303235",
+                botMessage: {
+                  backgroundColor: "#F1F1F0",
+                  textColor: "#000000",
+                  showAvatar: false,
                 },
-                chatWindow: {
-                    welcomeMessage: "Hi there! I am Getflix's bot. How can I help with Getflix related questions?",
-                    backgroundColor: "#ffffff",
-                    fontSize: 16,
-                    poweredByTextColor: "#303235",
-                    botMessage: {
-                        backgroundColor: "#f7f8ff",
-                        textColor: "#303235",
-                        showAvatar: true,
-                        avatarSrc: "https://www.getflix.com/assets/favicon96.png",
-                    },
-                    userMessage: {
-                        backgroundColor: "#c92a2a",
-                        textColor: "#ffffff",
-                        showAvatar: false
-                    },
-                    textInput: {
-                        placeholder: "Type your question",
-                        backgroundColor: "#ffffff",
-                        textColor: "#303235",
-                        sendButtonColor: "#c92a2a",
-                    }
-                }
-            }
-        })
+                userMessage: {
+                  backgroundColor: "#019cfd",
+                  textColor: "#fff",
+                  showAvatar: false,
+                },
+                textInput: {
+                  placeholder: "Type your question",
+                  backgroundColor: "#ffffff",
+                  textColor: "#303235",
+                  sendButtonColor: "#c92a2a",
+                },
+              },
+            },
+          });
+        } else {
+          console.error("Chatbot library is not loaded.");
+        }
+      });
     </script>
   </body>
 </html>
