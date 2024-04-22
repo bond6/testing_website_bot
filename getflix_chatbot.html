@@ -6,7 +6,7 @@
     <div id="portal"></div>
     <script src="https://cdn.jsdelivr.net/gh/bond6/testing_website_bot@main/getflix_web.nonmodule.js"></script>
     <script>
-      var window_width = window.innerWidth;
+      var window_width = window.wid;
       document.addEventListener("DOMContentLoaded", function () {
         // Ensure the Chatbot library is fully loaded
         while (typeof Chatbot === "undefined") {
@@ -20,7 +20,7 @@
               theme: {
                 button: {
                   backgroundColor: "#ff6464",
-                  right: window_width - 50,
+                  right: window_width - 150,
                   bottom: 50,
                   size: "large",
                   iconColor: "white",
