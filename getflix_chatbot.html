@@ -4,10 +4,9 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div id="portal"></div>
-    <script src="https://cdn.jsdelivr.net/gh/bond6/testing_website_bot@main/getflix_web.nonmodule.js"></script>
     <script>
       var window_width = window.innerWidth;
-      document.addEventListener("DOMContentLoaded", function () {
+      function initializeChatbot() {
         // Ensure the Chatbot library is fully loaded
         if (typeof Chatbot !== "undefined") {
           Chatbot.init({
@@ -19,7 +18,7 @@
             theme: {
               button: {
                 backgroundColor: "#ff6464",
-                right: window_width-150,
+                right: window_width - 150,
                 bottom: 50,
                 size: "large",
                 iconColor: "white",
@@ -52,7 +51,19 @@
         } else {
           console.error("Chatbot library is not loaded.");
         }
-      });
+      }
+      // Load the chatbot library
+      var chatbotScript = document.createElement("script");
+      chatbotScript.src =
+        "https://cdn.jsdelivr.net/gh/bond6/testing_website_bot@main/getflix_web.nonmodule.js";
+      chatbotScript.onload = function () {
+        // Chatbot library is loaded, initialize the chatbot
+        initializeChatbot();
+      };
+      chatbotScript.onerror = function () {
+        console.error("Failed to load the chatbot library.");
+      };
+      document.head.appendChild(chatbotScript);
     </script>
   </body>
 </html>
