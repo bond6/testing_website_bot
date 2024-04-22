@@ -52,18 +52,10 @@
           console.error("Chatbot library is not loaded.");
         }
       }
-      // Load the chatbot library
-      var chatbotScript = document.createElement("script");
-      chatbotScript.src =
-        "https://cdn.jsdelivr.net/gh/bond6/testing_website_bot@main/getflix_web.nonmodule.js";
-      chatbotScript.onload = function () {
-        // Chatbot library is loaded, initialize the chatbot
-        initializeChatbot();
-      };
-      chatbotScript.onerror = function () {
-        console.error("Failed to load the chatbot library.");
-      };
-      document.head.appendChild(chatbotScript);
     </script>
+    <script
+      onload="initializeChatbot()"
+      src="https://cdn.jsdelivr.net/gh/bond6/testing_website_bot@main/getflix_web.nonmodule.js"
+    ></script>
   </body>
 </html>
