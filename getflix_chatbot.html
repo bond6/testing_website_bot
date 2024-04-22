@@ -9,48 +9,48 @@
       var window_width = window.innerWidth;
       document.addEventListener("DOMContentLoaded", function () {
         // Ensure the Chatbot library is fully loaded
-        if (typeof Chatbot !== "undefined") {
-          Chatbot.init({
-            chatflowid: "ca8015a5-c7a2-43a7-a952-778aa2e76922",
-            apiHost: "https://flowise.ekomiapps.de",
-            chatflowConfig: {
-              // topK: 2
-            },
-            theme: {
-              button: {
-                backgroundColor: "#ff6464",
-                right: window_width-50,
-                bottom: 50,
-                size: "large",
-                iconColor: "white",
+        while (typeof Chatbot === "undefined") {
+          setTimeout(function () {
+            Chatbot.init({
+              chatflowid: "ca8015a5-c7a2-43a7-a952-778aa2e76922",
+              apiHost: "https://flowise.ekomiapps.de",
+              chatflowConfig: {
+                // topK: 2
               },
-              chatWindow: {
-                welcomeMessage:
-                  "Hi there! I am Getflix's bot. How can I help with Getflix's related questions?",
-                backgroundColor: "#ffffff",
-                fontSize: 16,
-                poweredByTextColor: "#303235",
-                botMessage: {
-                  backgroundColor: "#F1F1F0",
-                  textColor: "#000000",
-                  showAvatar: false,
+              theme: {
+                button: {
+                  backgroundColor: "#ff6464",
+                  right: window_width - 50,
+                  bottom: 50,
+                  size: "large",
+                  iconColor: "white",
                 },
-                userMessage: {
-                  backgroundColor: "#ef0000",
-                  textColor: "#fff",
-                  showAvatar: false,
-                },
-                textInput: {
-                  placeholder: "Type your question",
+                chatWindow: {
+                  welcomeMessage:
+                    "Hi there! I am Getflix's bot. How can I help with Getflix's related questions?",
                   backgroundColor: "#ffffff",
-                  textColor: "#303235",
-                  sendButtonColor: "#1c7ed6",
+                  fontSize: 16,
+                  poweredByTextColor: "#303235",
+                  botMessage: {
+                    backgroundColor: "#F1F1F0",
+                    textColor: "#000000",
+                    showAvatar: false,
+                  },
+                  userMessage: {
+                    backgroundColor: "#ef0000",
+                    textColor: "#fff",
+                    showAvatar: false,
+                  },
+                  textInput: {
+                    placeholder: "Type your question",
+                    backgroundColor: "#ffffff",
+                    textColor: "#303235",
+                    sendButtonColor: "#1c7ed6",
+                  },
                 },
               },
-            },
-          });
-        } else {
-          console.error("Chatbot library is not loaded.");
+            });
+          }, 500);
         }
       });
     </script>
