@@ -5,7 +5,6 @@
     <div id="root"></div>
     <div id="portal"></div>
     <script>
-      var window_width = window.innerWidth;
       function initializeChatbot() {
         // Ensure the Chatbot library is fully loaded
         if (typeof Chatbot !== "undefined") {
@@ -18,7 +17,7 @@
             theme: {
               button: {
                 backgroundColor: "#ff6464",
-                right: window_width - 150,
+                right: 150,
                 bottom: 50,
                 size: "large",
                 iconColor: "white",
